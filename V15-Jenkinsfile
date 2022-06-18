@@ -9,7 +9,7 @@ pipeline {
 			   checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/prakashst205/sonarqube-1.git']]])
 			}
 		}
-        stage('Clean and Install') {
+        stage('Build') {
             steps {
                 sh 'mvn clean package'
             }
